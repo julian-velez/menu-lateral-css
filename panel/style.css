@@ -1,0 +1,52 @@
+/* Elimina los márgenes predeterminados del body y establece una fuente predeterminada */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para el ícono del menú (hamburguesa) */
+.menu-toggle {
+  position: fixed;  /* Fija el ícono en la pantalla, no se desplaza con el contenido */
+  top: 20px;  /* Lo posiciona a 20px desde la parte superior */
+  left: 20px;  /* Lo posiciona a 20px desde la parte izquierda */
+  font-size: 24px;  /* Tamaño del ícono */
+  cursor: pointer;  /* Cambia el cursor a una mano al pasar sobre el ícono */
+  z-index: 2;  /* Asegura que el ícono esté por encima de otros elementos */
+}
+
+/* Estilos del menú lateral */
+.menu {
+  position: fixed;  /* Hace que el menú permanezca en su posición al hacer scroll */
+  top: 0;  /* Alinea el menú en la parte superior */
+  left: -250px;  /* Oculta el menú fuera de la pantalla hacia la izquierda */
+  width: 250px;  /* Ancho del menú */
+  height: 100vh;  /* Ocupa el 100% de la altura de la pantalla */
+  background: #333;  /* Color de fondo oscuro */
+  color: white;  /* Color del texto en blanco */
+  transition: left 0.3s ease-in-out;  /* Efecto de animación suave al aparecer/desaparecer */
+  padding-top: 60px;  /* Espacio en la parte superior para no solaparse con el icono */
+}
+
+/* Estilos para los enlaces dentro del menú */
+.menu a {
+  display: block;  /* Hace que cada enlace ocupe todo el ancho disponible */
+  color: white;  /* Color del texto */
+  text-decoration: none;  /* Elimina el subrayado de los enlaces */
+  padding: 15px;  /* Espaciado interno para que los enlaces sean más fáciles de clicar */
+  border-bottom: 1px solid #444;  /* Línea divisoria entre los enlaces */
+}
+
+/* Efecto hover para los enlaces del menú */
+.menu a:hover {
+  background: #444;  /* Cambia el color de fondo al pasar el cursor sobre un enlace */
+}
+
+/* Oculta el checkbox (se usa solo para la interacción con el menú) */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Cuando el checkbox está marcado (clic en el ícono), muestra el menú */
+input[type="checkbox"]:checked ~ .menu {
+  left: 0;  /* Mueve el menú desde -250px a 0px, haciéndolo visible */
+}
